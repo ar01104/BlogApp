@@ -7,17 +7,20 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
-
   <body>
-
-    <% if notice %>
-      <p class="alert alert-success"><%= notice %></p>
+    <% if !current_user %>
+    <h1>Welcome to the BlogApp</h1>
     <% end %>
-    <% if alert %>
-      <p class="alert alert-danger"><%= alert %></p>
-    <% end %>
-
-    <%= yield %>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+        </div>
+      </div>
+    </div>
   </body>
+  <%= render partial:"shared/navbar" %>
+  <%= yield %>
+  <%= render partial:"shared/footer" %>
 </html>
