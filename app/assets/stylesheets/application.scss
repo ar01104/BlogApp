@@ -1,0 +1,71 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_selfs
+ */
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+ @import "nav";
+
+ body{
+   background-color: 	#D8D8D8;
+   text-align: center;
+ }
+
+ .main {
+   margin-left: 0px; /* Same as the width of the sidebar */
+   padding-top: 45px;
+
+   #usr {
+     text-transform: capitalize;
+   }
+
+   p {
+     font-size: 18px;
+     font-family: Arial;
+     text-align: center;
+     font-style: italic;
+   }
+ }
+
+.form-container {
+  margin-top: 100px;
+  margin-left: 20px;
+
+}
+
+#button {
+  background-color: black;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+#button:hover {
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+}
+
+.flash-note {
+  color: #111;
+  margin-top: 15px;
+}

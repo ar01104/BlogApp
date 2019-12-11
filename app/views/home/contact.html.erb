@@ -1,0 +1,36 @@
+
+<div class="main">
+  <head>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <style>
+  body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+  </style>
+  </head>
+  <h1><b>Contact Page</b></h1>
+  <p><Strong id="usr">
+    <%= current_user.username %>!
+  </Strong>is there a problem?</p>
+  <body class="w3-light-grey">
+    <div class="form-container">
+    <%= form_tag request_contact_path, method: 'post' do %>
+      <%= label_tag 'Email:' %><br>
+      <%= text_field_tag :email, '', size: 100%><br>
+      <%= label_tag 'Name:' %><br>
+      <%= text_field_tag :name, '', size: 100%><br>
+      <%= label_tag 'Subject:' %><br>
+      <%= text_field_tag :subject, '', size: 100%>
+      <br>
+      <%= label_tag 'Enquies:' %><br>
+      <%= text_area_tag :enquieries, '', size: "100x10"%>
+      <br><br>
+      <%= submit_tag 'Report Problem' , class: 'btn btn-primary' %>
+    <% end %>
+    </div>
+  </body>
+</div>
+<div class="flash-note">
+<% flash.each do |key, value| %>
+<%= content_tag :div, content_tag(:p, value), id: "#{key}" unless value.blank? %>
+<% end %>
+</div>
