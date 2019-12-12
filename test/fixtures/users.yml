@@ -5,10 +5,10 @@
 # below each fixture, per the syntax in the comments below
 #
 one:
-  username: hola
+  username: Anis
   email: one@domain.com
   encrypted_password: nothing
 two:
-  username: hello
+  username: Feriel
   email: two@domain.com
   encrypted_password: nothing

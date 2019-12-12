@@ -10,6 +10,7 @@ include Devise::Test::IntegrationHelpers
 
   test 'should get homepage' do
     get home_url
+    assert_template layout: 'layouts/application'
     assert_template partial: '_navbar', count: 1
     assert_template partial: '_footer', count: 1
     assert_response :success
@@ -22,7 +23,7 @@ include Devise::Test::IntegrationHelpers
     assert_template partial: '_navbar', count: 1
     assert_template partial: '_footer', count: 1
     assert_select'h1', 'Contact Page'
-    assert_select'p', 'hola!
+    assert_select'p', 'Anis!
   is there a problem?'
   end
 

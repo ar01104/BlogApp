@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :profiles
   devise_for :users
   get 'contact', to: 'home#contact'
   get 'home', to: 'home#homepage'
