@@ -60,8 +60,8 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <img src="assets/avatar_g.jpg" style="width:100%">
     <div class="w3-container w3-white">
       <h4><b>My Name is <%= current_user.username %> </b></h4>
-      <p>Just me, myself and I, exploring the universe of uknownment. I have a heart of love and a interest of lorem ipsum and mauris neque quam blog. I want to share my world with you.</p>
-      <button id="button">Add Text</button><br><br>
+      <p></p>
+      <button id="button"><%= link_to 'Add Text', new_profile_path(user_id: @user) %></button><br><br>
     </div>
   </div><hr>
 
@@ -77,7 +77,6 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
       <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">News</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Clothing</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Shopping</span>
       <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Sports</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Games</span>
     </p>
-    <button id="button">Add Tags</button><br><br>
     </div>
   </div>
 

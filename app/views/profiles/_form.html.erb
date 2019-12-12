@@ -1,10 +1,13 @@
-
+<% if current_user %>
 <%= simple_form_for(@profile) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <div class="form-inputs">
-    <%= f.association :User %>
+    <p>
+    <%= @profile.user_id = current_user.id %>
+    </p>
+    <%= f.hidden_field :user_id, value: @profile.user_id %>
     <%= f.input :description %>
     <%= f.input :tags %>
   </div>
@@ -12,4 +15,5 @@
   <div class="form-actions">
     <%= f.button :submit %>
   </div>
+<% end %>
 <% end %>

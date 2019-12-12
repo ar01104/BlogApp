@@ -14,9 +14,9 @@ class ProfilesTest < ApplicationSystemTestCase
     visit profiles_url
     click_on "New Profile"
 
-    fill_in "User", with: @profile.User_id
     fill_in "Description", with: @profile.description
     fill_in "Tags", with: @profile.tags
+    fill_in "User", with: @profile.user_id
     click_on "Create Profile"
 
     assert_text "Profile was successfully created"
@@ -27,9 +27,9 @@ class ProfilesTest < ApplicationSystemTestCase
     visit profiles_url
     click_on "Edit", match: :first
 
-    fill_in "User", with: @profile.User_id
     fill_in "Description", with: @profile.description
     fill_in "Tags", with: @profile.tags
+    fill_in "User", with: @profile.user_id
     click_on "Update Profile"
 
     assert_text "Profile was successfully updated"
