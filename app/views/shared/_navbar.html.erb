@@ -1,8 +1,20 @@
 <% if current_user %>
+<script >
+  $(document).ready(function(){
+    $(".active").on({
+      mouseenter: function(){
+        $(this).css("background-color", "#111");
+      },
+      mouseleave: function(){
+        $(this).css("background-color", "#4CAF50");
+      }
+    });
+  });
+</script>
 <ul  class = "n">
   <li class= "user">Welcome <strong><%= current_user.username %></strong></li>
-  <li><a href="home">Home</a></li>
-  <li><a href="contact">Contact Us</a></li>
+  <li><%= link_to ' Home', home_path, class: 'navigation' %></li>
+  <li><%= link_to ' Contact Us', contact_path, class: 'navigation' %></li>
   <li class = "active">
   <%= link_to ' Log Out', destroy_user_session_path, method: :delete, class: 'active' %>
   </li>

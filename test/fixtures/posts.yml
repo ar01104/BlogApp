@@ -2,10 +2,12 @@
 
 one:
   user: one
+  title: MyString
   description: MyText
-  tags: MyString
+  posting_date: 2019-12-14
 
 two:
   user: two
+  title: MyString
   description: MyText
-  tags: MyString
+  posting_date: 2019-12-14

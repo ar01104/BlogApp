@@ -1,5 +1,7 @@
 class HomeController < ApplicationController
   def homepage
+    @profiles = Profile.user_profile(current_user)
+    @posts = Post.user_posts(current_user)
   end
 
   def contact

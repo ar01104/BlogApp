@@ -24,47 +24,34 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <div class="w3-card-4 w3-margin w3-white">
     <img src="assets/woods.jpg" alt="Nature" style="width:100%">
     <div class="w3-container">
-      <h3><b>TITLE HEADING</b></h3>
-      <h5>Title description, <span class="w3-opacity">April 7, 2014</span></h5>
+      <% @posts.each do |post| %>
+      <h3><b><%= post.title %></b></h3>
+      <span class="w3-opacity"><%= post.posting_date%></span>
     </div>
 
     <div class="w3-container">
-      <p></p>
-        <button id="button">Add Text</button><br><br>
+      <p id="post-p"><%= post.description %>
+      <% end %>
+      </p>
+        <button id="button"><%= link_to 'Add Text', new_post_path(user_id: @user) %></button><br><br>
     </div>
   </div>
   <hr>
 
-  <!-- Blog entry -->
-  <div class="w3-card-4 w3-margin w3-white">
-  <img src="assets/bridge.jpg" alt="Norway" style="width:100%">
-    <div class="w3-container">
-      <h3><b>BLOG ENTRY</b></h3>
-      <h5>Title description, <span class="w3-opacity">April 2, 2014</span></h5>
-    </div>
-
-    <div class="w3-container">
-      <p></p>
-      <button id="button">Add Text</button><br><br>
-      <div class="w3-row">
-      </div>
-    </div>
-  </div>
 <!-- END BLOG ENTRIES -->
 </div>
 
-<!-- Introduction menu -->
+<!-- Profile menu -->
 <div class="w3-col l4">
-  <!-- About Card -->
+  <!-- Description Card -->
   <div class="w3-card w3-margin w3-margin-top">
-  <img src="assets/avatar_g.jpg" style="width:100%">
+  <img src="assets/blank-profile-picture-973460_640.jpg" style="width:100%">
     <div class="w3-container w3-white">
       <h4><b>My Name is <%= current_user.username %> </b></h4>
-      <p>
-        <% Profile.all.each do |profile| %>
+      <p><% @profiles.each do |profile| %>
         <%= profile.description %>
         <% end %>
-      </p>
+      </p><br>
       <button id="button"><%= link_to 'Add Text', new_profile_path(user_id: @user) %></button><br><br>
     </div>
   </div><hr>
@@ -76,14 +63,14 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     </div>
     <div class="w3-container w3-white">
     <p>
-      <% Profile.all.each do |profile| %>
+      <% @profiles.each do |profile| %>
       <span class="w3-tag w3-black w3-margin-bottom"><%= profile.tags %></span>
       <% end %>
     </p>
     </div>
   </div>
 
-<!-- END Introduction Menu -->
+<!-- END Profile Menu -->
 </div>
 
 <!-- END GRID -->

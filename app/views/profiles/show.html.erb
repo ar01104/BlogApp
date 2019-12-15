@@ -1,4 +1,10 @@
+<% if current_user %>
 <p id="notice"><%= notice %></p>
+<div id="profile">
+<p>
+  <strong>User:</strong>
+  <%= @profile.user_id %>
+</p>
 
 <p>
   <strong>Description:</strong>
@@ -6,9 +12,11 @@
 </p>
 
 <p>
-  <strong>Tag:</strong>
-  <%= @profile.tag %>
+  <strong>Tags:</strong>
+  <%= @profile.tags %>
 </p>
 
 <%= link_to 'Edit', edit_profile_path(@profile) %> |
 <%= link_to 'Back', profiles_path %>
+</div>
+<% end %>

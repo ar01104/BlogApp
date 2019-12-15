@@ -1,0 +1,7 @@
+<% if current_user %>
+<h1 id = "post">New Post</h1>
+
+<%= render 'form', post: @post %>
+
+<%= link_to 'Back', posts_path %><br><br>
+<% end %>

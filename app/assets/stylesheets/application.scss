@@ -33,7 +33,6 @@
    p {
      font-size: 18px;
      font-family: Arial;
-     text-align: center;
      font-style: italic;
    }
  }
@@ -68,4 +67,8 @@
 .flash-note {
   color: #111;
   margin-top: 15px;
+}
+
+#post-p {
+  text-align: justify;
 }
